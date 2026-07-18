@@ -3,17 +3,11 @@ import torch
 import torch.nn as nn
 from torchvision import models, transforms
 from PIL import Image
-import os
-from werkzeug.utils import secure_filename
 
 # FLASK CONFIGURATION
 
 app = Flask(__name__)
-
-UPLOAD_FOLDER = "static/uploads"
-app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
-
-os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+app.config["MAX_CONTENT_LENGTH"] = 5 * 1024 * 1024
 
 # CLASS LABELS
 
@@ -83,16 +77,7 @@ def predict():
             description=""
         )
 
-    filename = secure_filename(file.filename)
-
-    filepath = os.path.join(
-        app.config["UPLOAD_FOLDER"],
-        filename
-    )
-
-    file.save(filepath)
-
-    image = Image.open(filepath).convert("RGB")
+    image = Image.open(file).convert("RGB")
 
     image = transform(image)
     image = image.unsqueeze(0)
@@ -172,9 +157,19 @@ def predict():
         prediction=prediction,
         confidence=confidence_display,
         description=description,
-        image_path=filepath,
-        show_result=True
+        show_result=True    
     )
+
+
+@app.errorhandler(413)
+def request_entity_too_large(error):
+    return render_template(
+        "index.html",
+        prediction="Ukuran gambar terlalu besar",
+        confidence=None,
+        description="Ukuran maksimum gambar yang dapat diunggah adalah 5 MB."
+    ), 413
+
 
 # RUN FLASK
 
