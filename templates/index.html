@@ -1,418 +1,419 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Skinova</title>
-
-        <link rel="stylesheet"
-        href="{{ url_for('static', filename='css/style.css') }}">
-
-        <!-- Font Awesome -->
-        <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-        <!-- Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
-    </head>
-
-    <body>
-
-        <!-- NAVBAR -->
-
-        <nav class="navbar">
-
-            <div class="logo">
-                <img src="{{ url_for('static', filename='images/logo.png') }}">
-                <span>Skinova</span>
-            </div>
-
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#technology">Technology</a></li>
-                <li><a href="#classify">Classify</a></li>
-            </ul>
-
-        </nav>
-
-        <!-- HERO -->
-
-        <section class="hero">
-
-            <div class="hero-image viewfinder">
-                <span class="vf-tr"></span>
-                <span class="vf-bl"></span>
-                <img src="{{ url_for('static', filename='images/foot.jpg') }}">
-            </div>
-
-            <div class="hero-content">
-
-                <span class="eyebrow">AI Dermatology Assistant</span>
-
-                <h1>
-                    Ketahui Jenis Penyakit
-                    Kulit Kaki Anda
-                </h1>
-
-                <p>
-                Unggah foto kondisi kulit kaki anda dan ketahui jenis kondisi yang terdeteksi melalui sistem identifikasi berbasis AI kami.
-                </p>
-
-                <button class="btn-primary" onclick="location.href='#classify'">
-                    Mulai Klasifikasi
-                </button>
-
-            </div>
-
-        </section>
-
-        <!-- ABOUT -->
-
-        <section id="about" class="about">
-
-            <span class="eyebrow">Tentang Kami</span>
-            <h2 class="section-heading">Tentang Skinova</h2>
-
-            <p class="about-text">
-                Situs web ini dikembangkan sebagai sarana untuk mengimplementasikan model klasifikasi citra guna mengidentifikasi jenis penyakit kulit kaki berdasarkan citra digital, sehingga membantu pengguna mengenali dan memahami penyakit kulit kaki secara efisien.
-            </p>
-
-            <div class="cards">
-
-                <div class="card">
-                    <i class="fas fa-lightbulb"></i>
-
-                    <h3>Mengapa Platform Ini?</h3>
-
-                    <p>
-                        Banyak kondisi kulit kaki memiliki karakteristik visual yang serupa, sehingga sulit untuk dibedakan. Platform ini membantu pengguna memperoleh informasi awal melalui analisis gambar berbasis AI.
-                    </p>
-                </div>
-
-                <div class="card">
-                    <i class="fas fa-microscope"></i>
-
-                    <h3>Identifikasi Akurat</h3>
-
-                    <p>
-                        Model AI kami dapat mengidentifikasi lebih dari 500 kondisi kulit kaki dengan tingkat akurasi 83,87% menggunakan algoritma Deep Learning.
-                    </p>
-                </div>
-
-                <div class="card">
-                    <i class="fas fa-book-medical"></i>
-
-                    <h3>Informasi Lengkap</h3>
-
-                    <p>
-                        Dapatkan informasi mengenai jenis kondisi penyakit kulit kaki, pengobatan yang tepat, dan perawatan yang benar.
-                    </p>
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- TECHNOLOGY -->
-
-        <section id="technology" class="technology">
-
-            <span class="eyebrow">Di Balik Layar</span>
-            <h2 class="title-shadow">Teknologi Kami</h2>
-
-            <p class="tech-desc">
-                Ditenagai oleh AI canggih dan algoritma Deep Learning yang dilatih menggunakan CNN dengan Arsitektur MobileNetV3.
-            </p>
-
-            <div class="tech-box">
-
-                <h3>Cara Kerja Sistem</h3>
-
-                <p>
-                    <strong>01 · Unggah Foto</strong>
-                    Unggah foto kulit kaki anda untuk diperiksa agar hasilnya lebih akurat, gunakan foto yang jelas dengan pencahayaan yang memadai dan fokuskan pada area kulit seperti punggung kaki, sela-sela jari kaki, dan telapak kaki.
-                </p>
-
-                <p>
-                    <strong>02 · Analisis AI</strong>
-                    Sistem akan memproses citra menggunakan model Convolutional Neural Network (CNN) dengan arsitektur MobileNetV3 untuk menganalisis karakteristik visual dan mengidentifikasi pola penyakit kulit pada kaki.
-                </p>
-
-                <p>
-                <strong>03 · Hasil Deteksi</strong>
-                Hasil identifikasi akan ditampilkan bersama dengan skor kepercayaan dan informasi terkait penyakit yang terdeteksi seperti jenis penyakit, pencegahan, dan rekomendasi pengobatan.
-                </p>
-            </div>
-
-        </section>
-
-        <!-- CLASSIFY -->
-
-        <section id="classify" class="classify">
-
-            <span class="eyebrow">Coba Sekarang</span>
-            <h2 class="section-heading">
-                Klasifikasi Jenis Penyakit Kulit Kaki
-            </h2>
-
+ 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skinova</title>
+ 
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}">
+ 
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+ 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700;900&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+</head>
+ 
+<body>
+ 
+    <!-- NAVBAR -->
+ 
+    <nav class="navbar">
+ 
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}">
+            <span>Skinova</span>
+        </div>
+ 
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#technology">Technology</a></li>
+            <li><a href="#classify">Classify</a></li>
+        </ul>
+ 
+    </nav>
+ 
+    <!-- HERO -->
+ 
+    <section class="hero">
+ 
+        <div class="hero-image viewfinder">
+            <span class="vf-tr"></span>
+            <span class="vf-bl"></span>
+            <img src="{{ url_for('static', filename='images/foot.jpg') }}">
+        </div>
+ 
+        <div class="hero-content">
+ 
+            <span class="eyebrow">AI Dermatology Assistant</span>
+ 
+            <h1>
+                Ketahui Jenis Penyakit
+                Kulit Kaki Anda
+            </h1>
+ 
             <p>
-                Unggah foto kondisi kulit pada kaki anda untuk segera mendapatkan informasi identifikasi dan jenis kondisinya.
+            Unggah foto kondisi kulit kaki anda dan ketahui jenis kondisi yang terdeteksi melalui sistem identifikasi berbasis AI kami.
             </p>
-
-            <div class="classify-container">
-
-                <!-- Upload Box -->
-                <div class="upload-box" id="dropArea">
-
-                    <i class="fas fa-cloud-upload-alt upload-icon"></i>
-
-                    <h3>Unggah Foto</h3>
-
-                    <p class="upload-text">
-                        Seret dan lepas gambar anda di sini, atau klik untuk menelusuri.
-                    </p>
-
-                    <form action="/predict"
-                        method="POST"
-                        enctype="multipart/form-data"
-                        id="uploadForm">
-
-                        <input
-                            type="file"
-                            id="imageInput"
-                            name="image"
-                            accept="image/*"
-                            required
-                            hidden>
-
-                        <p id="file-name">Tidak ada berkas yang dipilih</p>
-
-                        <button type="submit">Mulai</button>
-
-                    </form>
-                </div>
-
-                <!-- Result Box -->
-
-                <div class="result-box">
-
-                    <h3>Hasil Klasifikasi</h3>
-
+ 
+            <button class="btn-primary" onclick="location.href='#classify'">
+                Mulai Klasifikasi
+            </button>
+ 
+        </div>
+ 
+    </section>
+ 
+    <!-- ABOUT -->
+ 
+    <section id="about" class="about">
+ 
+        <span class="eyebrow">Tentang Kami</span>
+        <h2 class="section-heading">Tentang Skinova</h2>
+ 
+        <p class="about-text">
+            Situs web ini dikembangkan sebagai sarana untuk mengimplementasikan model klasifikasi citra guna mengidentifikasi jenis penyakit kulit kaki berdasarkan citra digital, sehingga membantu pengguna mengenali dan memahami penyakit kulit kaki secara efisien.
+        </p>
+ 
+        <div class="cards">
+ 
+            <div class="card">
+                <i class="fas fa-lightbulb"></i>
+ 
+                <h3>Mengapa Platform Ini?</h3>
+ 
+                <p>
+                    Banyak kondisi kulit kaki memiliki karakteristik visual yang serupa, sehingga sulit untuk dibedakan. Platform ini membantu pengguna memperoleh informasi awal melalui analisis gambar berbasis AI.
+                </p>
+            </div>
+ 
+            <div class="card">
+                <i class="fas fa-microscope"></i>
+ 
+                <h3>Identifikasi Akurat</h3>
+ 
+                <p>
+                    Model AI kami dapat mengidentifikasi lebih dari 500 kondisi kulit kaki dengan tingkat akurasi 83,87% menggunakan algoritma Deep Learning.
+                </p>
+            </div>
+ 
+            <div class="card">
+                <i class="fas fa-book-medical"></i>
+ 
+                <h3>Informasi Lengkap</h3>
+ 
+                <p>
+                    Dapatkan informasi mengenai jenis kondisi penyakit kulit kaki, pengobatan yang tepat, dan perawatan yang benar.
+                </p>
+            </div>
+ 
+        </div>
+ 
+    </section>
+ 
+    <!-- TECHNOLOGY -->
+ 
+    <section id="technology" class="technology">
+ 
+        <span class="eyebrow">Di Balik Layar</span>
+        <h2 class="title-shadow">Teknologi Kami</h2>
+ 
+        <p class="tech-desc">
+            Ditenagai oleh AI canggih dan algoritma Deep Learning yang dilatih menggunakan CNN dengan Arsitektur MobileNetV3.
+        </p>
+ 
+        <div class="tech-box">
+ 
+            <h3>Cara Kerja Sistem</h3>
+ 
+            <p>
+                <strong>01 · Unggah Foto</strong>
+                Unggah foto kulit kaki anda untuk diperiksa agar hasilnya lebih akurat, gunakan foto yang jelas dengan pencahayaan yang memadai dan fokuskan pada area kulit seperti punggung kaki, sela-sela jari kaki, dan telapak kaki.
+            </p>
+ 
+            <p>
+                <strong>02 · Analisis AI</strong>
+                Sistem akan memproses citra menggunakan model Convolutional Neural Network (CNN) dengan arsitektur MobileNetV3 untuk menganalisis karakteristik visual dan mengidentifikasi pola penyakit kulit pada kaki.
+            </p>
+ 
+            <p>
+            <strong>03 · Hasil Deteksi</strong>
+            Hasil identifikasi akan ditampilkan bersama dengan skor kepercayaan dan informasi terkait penyakit yang terdeteksi seperti jenis penyakit, pencegahan, dan rekomendasi pengobatan.
+            </p>
+        </div>
+ 
+    </section>
+ 
+    <!-- CLASSIFY -->
+ 
+    <section id="classify" class="classify">
+ 
+        <span class="eyebrow">Coba Sekarang</span>
+        <h2 class="section-heading">
+            Klasifikasi Jenis Penyakit Kulit Kaki
+        </h2>
+ 
+        <p>
+            Unggah foto kondisi kulit pada kaki anda untuk segera mendapatkan informasi identifikasi dan jenis kondisinya.
+        </p>
+ 
+        <div class="classify-container">
+ 
+            <!-- Upload Box -->
+            <div class="upload-box" id="dropArea">
+ 
+                <i class="fas fa-cloud-upload-alt upload-icon"></i>
+ 
+                <h3>Unggah Foto</h3>
+ 
+                <p class="upload-text">
+                    Seret dan lepas gambar anda di sini, atau klik untuk menelusuri.
+                </p>
+ 
+                <form action="/predict"
+                    method="POST"
+                    enctype="multipart/form-data"
+                    id="uploadForm">
+ 
+                    <input
+                        type="file"
+                        id="imageInput"
+                        name="image"
+                        accept="image/*"
+                        required
+                        hidden>
+ 
+                    <p id="file-name">Tidak ada berkas yang dipilih</p>
+ 
+                    <button type="submit">Mulai</button>
+ 
+                </form>
+            </div>
+ 
+            <!-- Result Box -->
+ 
+            <div class="result-box">
+ 
+                <h3>Hasil Klasifikasi</h3>
+ 
+                <div class="result-content" id="resultContent">
+ 
                     <div
-                            id="previewContainer"
-                            class="viewfinder"
-                            style="display:none; margin-bottom:20px;"
-                        >
-                            <span class="vf-tr"></span>
-                            <span class="vf-bl"></span>
-
-                            <img
-                                id="previewImage"
-                                src=""
-                                alt="Preview"
-                                width="250">
-                        </div>
-
-                    <div class="result-content" id="resultContent">
-
-                        {% if prediction %}
-
-                            <p>
-                                <strong>Disease</strong>
-                                {{ prediction }}
-                            </p>
-
-                            {% if confidence %}
-                            <p>
-                                <strong>Confidence</strong>
-                                {{ confidence }}
-                            </p>
-                            {% endif %}
-
-                            <p class="description">
-                                {{ description }}
-                            </p>
-
-                        {% else %}
-
-                            <p class="placeholder-text">
-                                Dapatkan Informasi Disini.
-                            </p>
-
-                        {% endif %}
-
+                        id="previewContainer"
+                        class="viewfinder"
+                        style="display:none; margin-bottom:20px;"
+                    >
+                        <span class="vf-tr"></span>
+                        <span class="vf-bl"></span>
+ 
+                        <img
+                            id="previewImage"
+                            src=""
+                            alt="Preview"
+                            width="250">
                     </div>
-
+ 
+                    {% if prediction %}
+ 
+                        <p>
+                            <strong>Disease</strong>
+                            {{ prediction }}
+                        </p>
+ 
+                        {% if confidence %}
+                        <p>
+                            <strong>Confidence</strong>
+                            {{ confidence }}
+                        </p>
+                        {% endif %}
+ 
+                        <p class="description">
+                            {{ description }}
+                        </p>
+ 
+                    {% else %}
+ 
+                        <p class="placeholder-text">
+                            Dapatkan Informasi Disini.
+                        </p>
+ 
+                    {% endif %}
+ 
                 </div>
-
-            </div> <!-- tutup classify-container -->
-
-        </section> <!-- tutup classify -->
-
-        <!-- FOOTER -->
-
-        <footer class="footer">
-            <h3>Skinova</h3>
-            <p>Sistem identifikasi penyakit kulit kaki berbasis AI.</p>
-            <p>&copy; 2026 Skinova. All rights reserved.</p>
-        </footer>
-
-    </body>
-    </html>
-
-    <!-- DRAG & DROP -->
-
-    <script>
-
-    const uploadBox = document.getElementById("dropArea");
-    const fileInput = document.getElementById("imageInput");
-    const fileName = document.getElementById("file-name");
-
-    const previewContainer = document.getElementById("previewContainer");
-    const previewImage = document.getElementById("previewImage");
-
-    // HANYA klik area upload, bukan tombol
-    uploadBox.addEventListener("click", function(e) {
-
-        if (
-            e.target.closest("button") ||
-            e.target.closest("form")
-        ) {
-            return;
+ 
+            </div>
+ 
+        </div> <!-- tutup classify-container -->
+ 
+    </section> <!-- tutup classify -->
+ 
+    <!-- FOOTER -->
+ 
+    <footer class="footer">
+        <h3>Skinova</h3>
+        <p>Sistem identifikasi penyakit kulit kaki berbasis AI.</p>
+        <p>&copy; 2026 Skinova. All rights reserved.</p>
+    </footer>
+ 
+</body>
+</html>
+ 
+<!-- DRAG & DROP -->
+ 
+<script>
+ 
+const uploadBox = document.getElementById("dropArea");
+const fileInput = document.getElementById("imageInput");
+const fileName = document.getElementById("file-name");
+ 
+const previewContainer = document.getElementById("previewContainer");
+const previewImage = document.getElementById("previewImage");
+ 
+// HANYA klik area upload, bukan tombol
+uploadBox.addEventListener("click", function(e) {
+ 
+    if (
+        e.target.closest("button") ||
+        e.target.closest("form")
+    ) {
+        return;
+    }
+ 
+    fileInput.click();
+ 
+});
+ 
+// tampil nama file + preview
+fileInput.addEventListener("change", function () {
+ 
+    if (this.files.length > 0) {
+ 
+        fileName.textContent = this.files[0].name;
+ 
+        const reader = new FileReader();
+ 
+        reader.onload = function (e) {
+ 
+            previewImage.src = e.target.result;
+            previewContainer.style.display = "inline-block";
+ 
+        };
+ 
+        reader.readAsDataURL(this.files[0]);
+ 
+    }
+ 
+});
+ 
+// submit via AJAX supaya tidak reload dari atas, hasil update di tempat
+const uploadForm = document.getElementById("uploadForm");
+const resultContent = document.getElementById("resultContent");
+const submitBtn = uploadForm.querySelector("button[type='submit']");
+ 
+uploadForm.addEventListener("submit", function(e) {
+ 
+    e.preventDefault();
+ 
+    if (!fileInput.files.length) {
+        return;
+    }
+ 
+    const originalBtnText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Memproses...";
+    resultContent.style.opacity = "0.4";
+ 
+    // Simpan snapshot preview sebelum innerHTML di-replace
+    const previewSnapshot = previewContainer.cloneNode(true);
+ 
+    const formData = new FormData(uploadForm);
+ 
+    fetch("/predict", {
+        method: "POST",
+        body: formData
+    })
+    .then(function(response) {
+        return response.text();
+    })
+    .then(function(html) {
+ 
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, "text/html");
+        const newResult = doc.getElementById("resultContent");
+ 
+        if (newResult) {
+            resultContent.innerHTML = newResult.innerHTML;
         }
-
-        fileInput.click();
-
+ 
+        // Pasang kembali preview di posisi paling atas
+        resultContent.prepend(previewSnapshot);
+ 
+        resultContent.style.opacity = "1";
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalBtnText;
+ 
+        resultContent.scrollIntoView({ behavior: "smooth", block: "nearest" });
+ 
+    })
+    .catch(function(err) {
+ 
+        resultContent.style.opacity = "1";
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalBtnText;
+ 
+        console.error("Gagal mengirim gambar:", err);
+        alert("Terjadi kesalahan saat memproses gambar. Silakan coba lagi.");
+ 
     });
-
-    // tampil nama file + preview
-    fileInput.addEventListener("change", function () {
-
-        if (this.files.length > 0) {
-
-            fileName.textContent = this.files[0].name;
-
-            const reader = new FileReader();
-
-            reader.onload = function (e) {
-
-                previewImage.src = e.target.result;
-                previewContainer.style.display = "inline-block";
-
-            };
-
-            reader.readAsDataURL(this.files[0]);
-
-        }
-
-    });
-
-    // submit via AJAX supaya tidak reload dari atas, hasil update di tempat
-    const uploadForm = document.getElementById("uploadForm");
-    const resultContent = document.getElementById("resultContent");
-    const submitBtn = uploadForm.querySelector("button[type='submit']");
-
-    uploadForm.addEventListener("submit", function(e) {
-
-        e.preventDefault();
-
-        if (!fileInput.files.length) {
-            return;
-        }
-
-        const originalBtnText = submitBtn.textContent;
-        submitBtn.disabled = true;
-        submitBtn.textContent = "Memproses...";
-        resultContent.style.opacity = "0.4";
-
-        const formData = new FormData(uploadForm);
-
-        fetch("/predict", {
-            method: "POST",
-            body: formData
-        })
-        .then(function(response) {
-            return response.text();
-        })
-        .then(function(html) {
-
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, "text/html");
-            const newResult = doc.getElementById("resultContent");
-
-            if (newResult) {
-                resultContent.innerHTML = newResult.innerHTML;
-            }
-
-            const preview = document.getElementById("previewContainer");
-
-            if (preview) {
-                resultContent.prepend(preview);
-            }
-
-            resultContent.style.opacity = "1";
-            submitBtn.disabled = false;
-            submitBtn.textContent = originalBtnText;
-
-            resultContent.scrollIntoView({ behavior: "smooth", block: "nearest" });
-
-        })
-        .catch(function(err) {
-
-            resultContent.style.opacity = "1";
-            submitBtn.disabled = false;
-            submitBtn.textContent = originalBtnText;
-
-            console.error("Gagal mengirim gambar:", err);
-            alert("Terjadi kesalahan saat memproses gambar. Silakan coba lagi.");
-
-        });
-
-    });
-
-    // drag over
-    uploadBox.addEventListener("dragover", function(e) {
-
-        e.preventDefault();
-        uploadBox.classList.add("dragover");
-
-    });
-
-    // drag leave
-    uploadBox.addEventListener("dragleave", function(e) {
-
-        uploadBox.classList.remove("dragover");
-
-    });
-
-    // drop
-    uploadBox.addEventListener("drop", function(e) {
-
-        e.preventDefault();
-        uploadBox.classList.remove("dragover");
-
-        fileInput.files = e.dataTransfer.files;
-
-        if (e.dataTransfer.files.length > 0) {
-
-            fileName.textContent = e.dataTransfer.files[0].name;
-
-            const reader = new FileReader();
-
-            reader.onload = function (event) {
-
-                previewImage.src = event.target.result;
-                previewContainer.style.display = "inline-block";
-
-            };
-
-            reader.readAsDataURL(e.dataTransfer.files[0]);
-
-        }
-
-    });
-
-    </script>
+ 
+});
+ 
+// drag over
+uploadBox.addEventListener("dragover", function(e) {
+ 
+    e.preventDefault();
+    uploadBox.classList.add("dragover");
+ 
+});
+ 
+// drag leave
+uploadBox.addEventListener("dragleave", function(e) {
+ 
+    uploadBox.classList.remove("dragover");
+ 
+});
+ 
+// drop
+uploadBox.addEventListener("drop", function(e) {
+ 
+    e.preventDefault();
+    uploadBox.classList.remove("dragover");
+ 
+    fileInput.files = e.dataTransfer.files;
+ 
+    if (e.dataTransfer.files.length > 0) {
+ 
+        fileName.textContent = e.dataTransfer.files[0].name;
+ 
+        const reader = new FileReader();
+ 
+        reader.onload = function (event) {
+ 
+            previewImage.src = event.target.result;
+            previewContainer.style.display = "inline-block";
+ 
+        };
+ 
+        reader.readAsDataURL(e.dataTransfer.files[0]);
+ 
+    }
+ 
+});
+ 
+</script>
