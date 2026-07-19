@@ -313,7 +313,7 @@ fileInput.addEventListener("change", function () {
 
 });
 
-// submit via AJAX supaya tidak reload dari atas, hasil update di tempat
+// submit via AJAX
 const uploadForm = document.getElementById("uploadForm");
 const resultContent = document.getElementById("resultContent");
 const submitBtn = uploadForm.querySelector("button[type='submit']");
@@ -331,7 +331,7 @@ uploadForm.addEventListener("submit", function(e) {
     submitBtn.textContent = "Memproses...";
     resultContent.style.opacity = "0.4";
 
-    // Simpan snapshot preview sebelum innerHTML di-replace
+    // Simpan snapshot preview (dengan src gambar yang sudah ada)
     const previewSnapshot = previewContainer.cloneNode(true);
 
     const formData = new FormData(uploadForm);
@@ -353,7 +353,13 @@ uploadForm.addEventListener("submit", function(e) {
             resultContent.innerHTML = newResult.innerHTML;
         }
 
-        // Pasang kembali preview di posisi paling atas
+        // Hapus previewContainer dari server response (display:none, src kosong)
+        // lalu ganti dengan snapshot yang sudah berisi gambar user
+        const serverPreview = resultContent.querySelector("#previewContainer");
+        if (serverPreview) {
+            serverPreview.remove();
+        }
+
         resultContent.prepend(previewSnapshot);
 
         resultContent.style.opacity = "1";
