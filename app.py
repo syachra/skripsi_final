@@ -38,6 +38,8 @@ model.load_state_dict(
 
 model.eval()
 
+print("Model loaded")
+
 # IMAGE PREPROCESSING
 
 transform = transforms.Compose([
@@ -83,7 +85,9 @@ def predict():
     image = transform(image)
     image = image.unsqueeze(0)
 
-    with torch.no_grad():
+    print("Start predict")
+
+    with torch.inference_mode():
 
         outputs = model(image)
 
@@ -96,6 +100,11 @@ def predict():
             probabilities,
             1
         )
+
+    print("Finish predict")
+
+    del image
+    del outputs
 
     confidence = confidence.item() * 100
 
