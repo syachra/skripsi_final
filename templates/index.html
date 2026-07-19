@@ -343,14 +343,20 @@
             const doc = parser.parseFromString(html, "text/html");
             const newResult = doc.getElementById("resultContent");
 
+            // Simpan preview yang sedang tampil
+            const oldPreview = previewContainer.cloneNode(true);
+
             if (newResult) {
                 resultContent.innerHTML = newResult.innerHTML;
             }
 
-            const preview = document.getElementById("previewContainer");
+            // Pasang kembali preview agar tidak hilang setelah hasil prediksi muncul
+            const resultPreview = document.getElementById("previewContainer");
 
-            if (preview) {
-                resultContent.prepend(preview);
+            if (resultPreview) {
+                resultPreview.replaceWith(oldPreview);
+            } else {
+                resultContent.prepend(oldPreview);
             }
 
             resultContent.style.opacity = "1";
