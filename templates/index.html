@@ -201,9 +201,7 @@
 
                     <h3>Hasil Klasifikasi</h3>
 
-                    <div class="result-content" id="resultContent">
-
-                        <div
+                    <div
                             id="previewContainer"
                             class="viewfinder"
                             style="display:none; margin-bottom:20px;"
@@ -217,6 +215,8 @@
                                 alt="Preview"
                                 width="250">
                         </div>
+
+                    <div class="result-content" id="resultContent">
 
                         {% if prediction %}
 
@@ -343,20 +343,14 @@
             const doc = parser.parseFromString(html, "text/html");
             const newResult = doc.getElementById("resultContent");
 
-            // Simpan preview yang sedang tampil
-            const oldPreview = previewContainer.cloneNode(true);
-
             if (newResult) {
                 resultContent.innerHTML = newResult.innerHTML;
             }
 
-            // Pasang kembali preview agar tidak hilang setelah hasil prediksi muncul
-            const resultPreview = document.getElementById("previewContainer");
+            const preview = document.getElementById("previewContainer");
 
-            if (resultPreview) {
-                resultPreview.replaceWith(oldPreview);
-            } else {
-                resultContent.prepend(oldPreview);
+            if (preview) {
+                resultContent.prepend(preview);
             }
 
             resultContent.style.opacity = "1";
