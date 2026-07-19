@@ -3,6 +3,7 @@ import torch
 import torch.nn as nn
 from torchvision import models, transforms
 from PIL import Image
+import os
 
 # FLASK CONFIGURATION
 
@@ -174,4 +175,9 @@ def request_entity_too_large(error):
 # RUN FLASK
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 7860))
+    app.run(
+        host="0.0.0.0",
+        port=port,
+        debug=False
+    )
